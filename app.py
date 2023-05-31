@@ -29,6 +29,18 @@ sys.stdout = StreamToLogger(stdout_logger, logging.INFO)
 stderr_logger = logging.getLogger('STDERR')
 sys.stderr = StreamToLogger(stderr_logger, logging.ERROR)
 
+## --- Read from config ---
+
+import configparser
+
+# read configuration
+config = configparser.ConfigParser()
+config.read('config.cfg')
+
+try:
+    port = int(config.get('Server', 'port'))
+except (configparser.NoSectionError, configparser.NoOptionError, ValueError):
+    port = 8000
 
 ## --- Shut me down server ---
 
@@ -56,4 +68,4 @@ def shutdown():
     return 'Shutting down...'
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=8000)
+    app.run(host='0.0.0.0', port=port)
