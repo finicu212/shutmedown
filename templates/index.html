@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <title>Shutdown Server</title>
+    <style>
+        /* Define a full height class */
+        .full-height {
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <div class="d-flex justify-content-center align-items-center full-height">
+        <form action="/shutdown" method="post">
+            <!-- Use Bootstrap button classes -->
+            <input class="btn btn-danger btn-lg" type="submit" value="Shutdown computer">
+        </form>
+    </div>
+</body>
+</html>
