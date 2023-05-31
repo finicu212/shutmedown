@@ -8,6 +8,7 @@ app:
 clean:
 	rm -rf build dist *.spec
 
-# Windows Task Scheduler ?? Inside a Makefile ??? MADNESS
+# set up Windows Task Scheduler. Inside a Makefile. Madness 
 task:
-	schtasks /Create /TN "MyAppOnIdle" /TR "C:\path\to\your\app.exe" /SC ONEVENT /EC System /MO "*[System[Provider[@Name='Microsoft-Windows-Kernel-Power'] and EventID=42]]" /RL HIGHEST
+        @APP_PATH=$(shell cd && pwd)/dist/app.exe; \
+    schtasks /Create /TN "shutmedown" /TR $$APP_PATH /SC ONEVENT /EC System /MO "*[System[Provider[@Name='Microsoft-Windows-Kernel-Power'] and EventID=42]]" /RL HIGHEST
