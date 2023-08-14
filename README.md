@@ -1,8 +1,8 @@
 # shutmedown
 
-This is a Python Flask web SaaS app (shut down as a service). A big red button that shuts down the server. Runs on port 8000 by default but you can change in config.cfg. Pressing the red button will also deduct 1$ from your bank account (jk)
+This is a Python Flask web SaaS app (shut down as a service). A big red button that shuts down the server. Runs on port 8000 by default but you can change in config.cfg. Pressing the red button will also deduct 1$ from your bank account
 
-I use this to shut down my PC from my bed because i'm lazy. my pc is hosting TV series which I pirated because fuck netflix
+I use this to shut down my PC from my bed
 
 ### Big Red Button
 
